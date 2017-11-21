@@ -18,9 +18,11 @@ public class HttpServerVerticle extends AbstractVerticle {
     private static final int DEFAULT_HTTP_PORT = 8080;
 
     private final int httpPort;
+    
+   
 
     @Autowired
-    HttpServerVerticle(@Value("${server.port}") final int httpPort) {
+    public HttpServerVerticle(@Value("${server.port}") final int httpPort) {
         this.httpPort = getHttpPort(httpPort);
     }
 
@@ -44,6 +46,8 @@ public class HttpServerVerticle extends AbstractVerticle {
         vertx.createHttpServer()
                 .requestHandler(router::accept)
                 .listen(7000, serverStartHandler(startFuture));
+        
+       
     }
 
     private Handler<HttpServerRequest> requestHandler() {

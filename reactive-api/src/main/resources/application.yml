@@ -1,0 +1,21 @@
+server:
+  port: 9999
+    
+thread:
+  pool:
+   size: 50
+  
+management:
+  security:  
+    enabled: false    
+    
+spring:
+  application:
+    name: reactiveapi      
+        
+  boot:
+    admin:
+        username: admin
+        password: admin123
+        url: http://localhost:1111      
+  

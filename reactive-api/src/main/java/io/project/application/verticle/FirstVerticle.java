@@ -12,12 +12,10 @@ public class FirstVerticle extends AbstractVerticle {
 
         EventBus eb = vertx.eventBus();
 
-      //  eb.consumer("news-feed", message -> System.out.println("Received news on consumer 1: " + message.body()));
+        ///eb.consumer("news-feed", message -> System.out.println("Received news on consumer 1: " + message.body()));
 
         //eb.consumer("news-feed", message -> System.out.println("Received news on consumer 2: " + message.body()));
-
         //eb.consumer("news-feed", message -> System.out.println("Received news on consumer 3: " + message.body()));
-
         //System.out.println("Ready!");
     }
 

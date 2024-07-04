@@ -12,8 +12,8 @@ public class SecondVerticle extends AbstractVerticle {
 
         EventBus eb = vertx.eventBus();
 
-        // Send a message every second
-        //  vertx.setPeriodic(5000, v -> eb.publish("news-feed", "Some news!"));
+        // Send a message every 15 second
+        /// vertx.setPeriodic(15000, v -> eb.publish("news-feed", "Hot news!"));
     }
 
 }

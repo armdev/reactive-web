@@ -14,21 +14,6 @@ import io.project.application.annotation.Verticle;
 public class HttpServerVerticle extends AbstractVerticle {
 
     private static final int DEFAULT_HTTP_PORT = 7000;
-   
-    
-   
-
-//    @Autowired
-//    public HttpServerVerticle(@Value("${server.port}") final int httpPort) {
-//        this.httpPort = getHttpPort(httpPort);
-//    }
-//
-//    private int getHttpPort(final int httpPort) {
-//        if (httpPort < 0) {
-//            return DEFAULT_HTTP_PORT;
-//        }
-//        return httpPort;
-//    }
 
     @Override
     public void start(final Future<Void> startFuture) throws Exception {
@@ -43,8 +28,7 @@ public class HttpServerVerticle extends AbstractVerticle {
         vertx.createHttpServer()
                 .requestHandler(router::accept)
                 .listen(DEFAULT_HTTP_PORT, serverStartHandler(startFuture));
-        
-       
+
     }
 
     private Handler<HttpServerRequest> requestHandler() {

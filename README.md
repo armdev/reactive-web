@@ -1,18 +1,20 @@
-# reactive-web
+# Reactive Web
 
-I cant beleive -> vertx run in 7000 port, spring boot in 8080!:)))
+## Overview
+Welcome to the Reactive Web project, integrating Vert.x and Spring Boot.
 
-vert.x spring integration
+This project demonstrates the seamless integration of Vert.x running on port 7000 and Spring Boot running on port 8080.
 
-Two strange  endpoints: :)
+Endpoints
 
+## Swagger UI
+Spring Boot: http://localhost:8080/swagger-ui.html
 
-http://localhost:8080/swagger-ui.html
+## Custom Endpoints
 
-Spring
-http://localhost:8080/secret/path/find
+Spring Boot: http://localhost:8080/secret/path/find
 
-vert.x
-http://localhost:7000/health
+Vert.x: http://localhost:7000/health
 
-updated to Spring 3.3.0 after 7 years!
+## Updates
+This project has been updated to use Spring Boot version 3.3.0, marking a significant update after 7 years.

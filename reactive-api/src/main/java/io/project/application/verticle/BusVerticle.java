@@ -2,7 +2,8 @@ package io.project.application.verticle;
 
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.Vertx;
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ public class BusVerticle {
         //ola la
         vertx.setPeriodic(9000, v -> eventBus.publish("info", "Time is " + System.currentTimeMillis()));
 
-        eventBus.consumer("info", message -> System.out.println("Rrecived:::::: " + message.body()));
+        eventBus.consumer("info", message -> System.out.println("Received:::::: " + message.body()));
     }
 
 }

@@ -1,21 +1,62 @@
-#server:
-#  port: 9999
-#    
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  security:
+    enabled: false
+  server:
+    port: 9090
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      enabled: true
+      show-details: ALWAYS
+    probes:
+      enabled: true
+  endpoints:
+    jmx:
+      exposure:
+       include: '*'
+    web:
+     exposure:
+      include: '*'
+    cors:
+      allowed-origins: 'true'
+      enabled-by-default: 'false'
+ 
+      
+server:
+  tomcat:
+    accept-count: 5000
+    connection-timeout: 50000
+    keep-alive-timeout: 50000   
+    max-connections: 3000
+    max-http-form-post-size: -1
+    threads:        
+      max: 2000
+      min-spare: 20  
+  shutdown: GRACEFUL
+  http2:
+     enabled: true
+  port: 8080
+  servlet:
+      session:
+        timeout: 30m
+  compression:
+      enabled: true
+      mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+      min-response-size: 1024
+      
 thread:
   pool:
    size: 50
-  
-management:
-  security:  
-    enabled: false    
-    
+ 
 spring:
   application:
     name: reactiveapi      
-        
-  boot:
-    admin:
-        username: admin
-        password: admin123
-        url: http://localhost:1111      
+   
   
